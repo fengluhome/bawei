@@ -26,7 +26,6 @@
     margin-top: 53px;
     height: 210px;
     overflow: hidden;
-    background-color: #008000;
 }
 
 .menu {
@@ -111,8 +110,54 @@
         border-radius: 5px;
     }
 
+.footer2 {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 12px 18px;
+    text-align: center;
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+    .footer2 .clicbtn {
+        width: 100%;
+        line-height: 41px;
+        font-size: 17px;
+        color: #5abc9b;
+        border: solid 1px #5abc9b;
+        border-radius: 5px;
+    }
+
 .user-header {
     height: 76px;
     width: 70px;
     border-radius: 50px;
 }
+
+#divShare .info {
+    color: #5abc9b;
+    font-size: 19px;
+    font-weight: bold;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+
+    #divShare .info .icon-arrows {
+        width: 58px;
+        height: 45px;
+        background-repeat: no-repeat;
+        background-image: url(/images/1x/tip.png);
+        background-image: -webkit-image-set(url(/images/1x/tip.png) 1x,url(/images/2x/tip.png) 2x);
+        background-position: center;
+    }
+
+    #divShare .info .inco-menu {
+        display: inline-block;
+        width: 14px;
+        height: 26px;
+        background-repeat: no-repeat;
+        background-image: url(/images/1x/tip2.png);
+        background-image: -webkit-image-set(url(/images/1x/tip2.png) 1x,url(/images/2x/tip2.png) 2x);
+    }

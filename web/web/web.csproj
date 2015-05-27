@@ -67,7 +67,7 @@
   <ItemGroup>
     <Content Include="css\global.css" />
     <Content Include="css\index.css" />
-    <Content Include="details.html" />
+    <Content Include="html\details.html" />
     <Content Include="images\1x\h.png" />
     <Content Include="images\1x\o.png" />
     <Content Include="images\1x\r.png" />
@@ -88,7 +88,10 @@
     <Content Include="images\2x\top_l_j.png" />
     <Content Include="images\2x\v.png" />
     <Content Include="images\head.png" />
+    <Content Include="details.html" />
     <Content Include="js\ajax.js" />
+    <Content Include="js\index.js" />
+    <Content Include="html\share.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

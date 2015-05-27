@@ -9,8 +9,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <title></title>
-    <link href="css/global.css" rel="stylesheet" />
-    <link href="css/index.css" rel="stylesheet" />
+    <link href="/css/global.css" rel="stylesheet" />
+    <link href="/css/index.css" rel="stylesheet" />
+    <script src="js/ajax.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
 
@@ -35,7 +37,7 @@
             <table class="table">
                 <tr>
                     <td rowspan="3" style="width: 100px; padding-left: 7px; vertical-align: top;">
-                        <div class="user-header" style="background: url(images/head.png) no-repeat; background-size: cover; "></div>
+                        <div class="user-header" style="background: url(/images/head.png) no-repeat; background-size: cover; "></div>
                     </td>
                     <td>时&nbsp;&nbsp;&nbsp;间：</td>
                     <td>2015/5/22 14:20</td>
@@ -63,8 +65,34 @@
             </div>
         </div>
     </div>
-    <div class="footer">
+    <div class="footer" style="display: none;">
         <span class="clicbtn" ontouchstart="window.location='/'">一键收听</span>
     </div>
+    <div class="footer2">
+        <span class="clicbtn" ontouchstart="alerModal.shareModal.show()">一键分享</span>
+    </div>
+    <table class="alert" id="divShare" style="display: none;">
+        <tr>
+            <td>
+                <div class="info">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="icon-arrows"> </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>点击右上角菜单 <span class="inco-menu"></span></div>
+                                <div>分享到朋友圈或朋友</div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

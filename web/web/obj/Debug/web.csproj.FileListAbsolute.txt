@@ -4,3 +4,9 @@ F:\ExpressionProject\javascript\web\web\bin\web.pdb
 F:\ExpressionProject\javascript\web\web\obj\Debug\web.csprojResolveAssemblyReference.cache
 F:\ExpressionProject\javascript\web\web\obj\Debug\web.dll
 F:\ExpressionProject\javascript\web\web\obj\Debug\web.pdb
+E:\bawei\web\web\bin\web.dll.config
+E:\bawei\web\web\bin\web.dll
+E:\bawei\web\web\bin\web.pdb
+E:\bawei\web\web\obj\Debug\web.csprojResolveAssemblyReference.cache
+E:\bawei\web\web\obj\Debug\web.dll
+E:\bawei\web\web\obj\Debug\web.pdb
