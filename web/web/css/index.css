@@ -314,3 +314,71 @@
             border-radius: 3px;
             float: right;
         }
+
+.comment {
+    padding-bottom: 80px;
+}
+
+    .comment .item {
+        padding: 17px 14px;
+        border-bottom: 1px solid #CACACA;
+    }
+
+        .comment .item table {
+            width: 100%;
+        }
+
+        .comment .item .media-object {
+            display: block;
+            width: 52px;
+            height: 52px;
+            border-radius: 50px;
+        }
+
+        .comment .item .time {
+            color: #999999;
+            font-size: 13px;
+        }
+
+        .comment .item .txt {
+            padding: 12px 0px 10px;
+        }
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 41px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    outline: none;
+}
+
+.footer.commetFrom {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.footer table {
+    width: 100%;
+}
+
+    .footer table .btnCont {
+        width: 24%;
+        padding-left: 8px;
+    }
+
+    .footer table .sendComment {
+        width: 100%;
+        min-width: 85px;
+    }
