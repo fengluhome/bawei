@@ -315,6 +315,62 @@
             float: right;
         }
 
+    .questioning .modalDiv {
+        width: 85%;
+        height: 246px;
+        margin: 0 auto;
+        background-color: #ffffff;
+    }
+
+        .questioning .modalDiv .close {
+            height: 28px;
+            position: relative;
+        }
+
+            .questioning .modalDiv .close .con-clsoe {
+                display: inline-block;
+                height: 27px;
+                width: 27px;
+                background-repeat: no-repeat;
+                background-image: url(/images/1x/o.png);
+                background-image: -webkit-image-set(url(/images/1x/o.png) 1x,url(/images/2x/o.png) 2x);
+                position: absolute;
+                right: 0;
+            }
+
+        .questioning .modalDiv .title {
+            font-size: 17px;
+            color: #5abc9b;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .questioning .modalDiv .conteTxt {
+            padding: 15px 25px;
+            padding-bottom: 30px;
+        }
+
+        .questioning .modalDiv .modal-btngroup {
+            padding: 15px 25px;
+        }
+
+            .questioning .modalDiv .modal-btngroup table {
+                width: 100%;
+            }
+
+            .questioning .modalDiv .modal-btngroup .clicbtn {
+                width: 100%;
+                line-height: 40px;
+                color: #5abc9b;
+                border: solid 1px #5abc9b;
+                text-align: center;
+                border-radius: 5px;
+            }
+
+                .questioning .modalDiv .modal-btngroup .clicbtn:active {
+                    color: #fff;
+                }
+
 .comment {
     padding-bottom: 80px;
 }
@@ -382,3 +438,101 @@
         width: 100%;
         min-width: 85px;
     }
+
+.userDiv {
+}
+
+    .userDiv .vedio {
+        overflow: visible;
+    }
+
+    .userDiv .back {
+        position: absolute;
+        left: 0;
+        font-size: 15px;
+        padding: 0px 15px;
+        color: #666666;
+    }
+
+    .userDiv .headerContais {
+        position: relative;
+        width: 136px;
+        margin: 0 auto;
+        height: 210px;
+    }
+
+    .userDiv .user-head {
+        width: 135px;
+        height: 135px;
+        border-radius: 88px;
+        border: solid 2px #ffffff;
+        position: absolute;
+        bottom: -50px;
+    }
+
+    .userDiv .name {
+        text-align: center;
+        margin-top: 70px;
+        font-size: 18px;
+        margin-bottom: 19px;
+    }
+
+    .userDiv .header .icon-header {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-image: url(/images/1x/h.png);
+        background-image: -webkit-image-set(url(/images/1x/h.png) 1x,url(/images/2x/h.png) 2x);
+        background-position: center;
+        position: absolute;
+        right: 17px;
+        top: 14px;
+    }
+
+    .userDiv .course {
+        padding: 17px 16px;
+        border-top: solid 1px #d2d2d2;
+        border-bottom: solid 1px #d2d2d2;
+        font-size: 16px;
+        color: #5abc9b;
+    }
+
+    .userDiv .incon_course {
+        width: 19px;
+        height: 19px;
+        margin-right: 8px;
+        display: inline-block;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-image: url(/images/1x/v.png);
+        background-image: -webkit-image-set(url(/images/1x/v.png) 1x,url(/images/2x/v.png) 2x);
+    }
+
+    .userDiv .courseList {
+        padding: 0 16px;
+        margin-bottom: 30px;
+    }
+
+        .userDiv .courseList li {
+            padding: 10px 0px;
+            padding-right: 32px;
+            border-bottom: dashed 1px #d2d2d2;
+            position: relative;
+        }
+
+            .userDiv .courseList li .descrioin {
+                color: #999999;
+            }
+
+            .userDiv .courseList li .con-target {
+                display: inline-block;
+                width: 10px;
+                height: 17px;
+                position: absolute;
+                right: 1px;
+                top: 22px;
+                background-repeat: no-repeat;
+                background-image: url(/images/1x/r_jx1.png);
+                background-image: -webkit-image-set(url(/images/1x/r_jx1.png) 1x,url(/images/2x/r_jx2.png) 2x);
+            }

@@ -69,11 +69,14 @@
     <Content Include="css\index.css" />
     <Content Include="html\comment.html" />
     <Content Include="html\details.html" />
+    <Content Include="html\questioning-alert.html" />
     <Content Include="html\questioning.html" />
+    <Content Include="html\user.html" />
     <Content Include="images\1x\h.png" />
     <Content Include="images\1x\o.png" />
     <Content Include="images\1x\r.png" />
     <Content Include="images\1x\r_j.png" />
+    <Content Include="images\1x\r_jx1.png" />
     <Content Include="images\1x\r_j_2.png" />
     <Content Include="images\1x\tip.png" />
     <Content Include="images\1x\tips.png" />
@@ -84,6 +87,7 @@
     <Content Include="images\2x\o.png" />
     <Content Include="images\2x\r.png" />
     <Content Include="images\2x\r_j.png" />
+    <Content Include="images\2x\r_jx2.png" />
     <Content Include="images\2x\r_j_2.png" />
     <Content Include="images\2x\tip.png" />
     <Content Include="images\2x\tip2.png" />
