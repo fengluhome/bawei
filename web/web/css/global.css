@@ -10,7 +10,7 @@
 body {
     margin: 0 auto;
     height: 100%;
-    background: #FFF;
+    background: #efefef;
     font-size: 14px;
     font-family: "Microsoft YaHei", 微 软 雅 黑, "MicrosoftJhengHei", 华 文 细 黑, STHeiti, MingLiu;
     line-height: 1.5;
@@ -27,6 +27,11 @@ body {
 textarea {
     resize: none;
     outline: none;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
 }
 
 .clicbtn, span.clicbtn {
@@ -50,6 +55,10 @@ ul {
     list-style: none;
 }
 
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
 
 .table {
     width: 100%;

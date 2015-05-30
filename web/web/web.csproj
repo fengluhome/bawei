@@ -68,6 +68,7 @@
     <Content Include="css\global.css" />
     <Content Include="css\index.css" />
     <Content Include="html\details.html" />
+    <Content Include="html\questioning.html" />
     <Content Include="images\1x\h.png" />
     <Content Include="images\1x\o.png" />
     <Content Include="images\1x\r.png" />
