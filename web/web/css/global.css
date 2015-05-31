@@ -22,6 +22,7 @@ body {
     min-width: 320px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-font-smoothing: subpixel-antialiased;
+    overflow: scroll;
 }
 
 textarea {
@@ -39,7 +40,7 @@ img {
     -ms-transition: background-color .1s ease;
     -o-transition: background-color .1s ease;
     transition: background-color .1s ease;
-    touch-action: manipulation;
+    /*touch-action: manipulation;*/
 }
 
 span.clicbtn {

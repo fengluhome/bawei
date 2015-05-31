@@ -116,8 +116,8 @@
             </tr>
         </table>
 
-        <div class="footer">
-            <span class="clicbtn" ontouchstart="questioning.questioningClick(this)">要我评论</span>
+        <div class="footer" id="questioning-footer" onclick="questioning.questioningClick()">
+            <span class="clicbtn">要我评论</span>
         </div>
 
         <table class="alert" style="display: none;" id="querstioning-alert">
@@ -133,8 +133,8 @@
                         <div class="modal-btngroup">
                             <table>
                                 <tr>
-                                    <td style="padding-right: 9px;"> <span class="clicbtn">残忍拒绝</span></td>
-                                    <td style="padding-left: 9px;"><span class="clicbtn">去关注</span></td>
+                                    <td style="padding-right: 9px;"> <span class="clicbtn" ontouchstart="alerModal.attentionModal.hide()">残忍拒绝</span></td>
+                                    <td style="padding-left: 9px;"><span class="clicbtn" ontouchstart="window.location='/'">去关注</span></td>
                                 </tr>
                             </table>
                         </div>

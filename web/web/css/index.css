@@ -101,12 +101,13 @@
     box-shadow: 0px 0px 1px 1px rgba(0,0,0,.2);
     text-align: center;
     background-color: #ffffff;
-    z-index: 1;
+    z-index: 5;
 }
 
     .footer .clicbtn {
         width: 100%;
         line-height: 41px;
+        height: 41px;
         font-size: 17px;
         background-color: #5abc9b;
         color: #f4fbf8;
@@ -270,6 +271,7 @@
             width: 80%;
             background-color: #fff;
             line-height: 38px;
+            height: 38px;
             border: solid 1px #c9c9c9;
             border-radius: 6px;
         }
@@ -508,16 +510,20 @@
     }
 
     .userDiv .courseList {
-        padding: 0 16px;
         margin-bottom: 30px;
     }
 
         .userDiv .courseList li {
-            padding: 10px 0px;
+            padding: 10px 16px;
             padding-right: 32px;
             border-bottom: dashed 1px #d2d2d2;
             position: relative;
         }
+
+            .userDiv .courseList li a {
+                display: block;
+                color: #333;
+            }
 
             .userDiv .courseList li .descrioin {
                 color: #999999;
@@ -528,9 +534,19 @@
                 width: 10px;
                 height: 17px;
                 position: absolute;
-                right: 1px;
+                right: 12px;
                 top: 22px;
                 background-repeat: no-repeat;
                 background-image: url(/images/1x/r_jx1.png);
                 background-image: -webkit-image-set(url(/images/1x/r_jx1.png) 1x,url(/images/2x/r_jx2.png) 2x);
             }
+
+            .userDiv .courseList li.on {
+                background-color: #e5e5e5;
+            }
+
+                .userDiv .courseList li.on .con-target {
+                    background-repeat: no-repeat;
+                    background-image: url(/images/1x/r_j_2.png);
+                    background-image: -webkit-image-set(url(/images/1x/r_j_2.png) 1x,url(/images/2x/r_j_2.png) 2x);
+                }

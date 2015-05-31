@@ -85,7 +85,7 @@ var questioning = new function () {
     function showFrom() {
         document.getElementById("questioning-form").style.display = "block";
     }
-
+    var ajaxStatus = true;
     function postQuestion() {
         var txt = document.getElementById("questioning-form-txt").value || "";
 
@@ -93,26 +93,31 @@ var questioning = new function () {
             alert("请输入提问内容");
             return;
         }
+        if (ajaxStatus) {
+            ajaxStatus = false;
+            $.ajax({
+                type: 'post',
+                url: "/wap/create",
+                data: { type: "Q", content: txt, uid: userInfo.uid },
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.result) {
+                        console.log("提问成功！");
+                        tohtml(data.question);
+                        alerModal.attentionModal.show();
+                    } else {
+                        alert("提问失败");
+                    }
+                    ajaxStatus = true;
 
-        $.ajax({
-            type: 'post',
-            url: "/wap/create",
-            data: { type: "Q", content: txt, uid: userInfo.uid },
-            cache: false,
-            dataType: 'json',
-            success: function (data) {
-                if (data.result) {
-                    console.log("提问成功！");
-                    tohtml(data.question);
+                },
+                error: function () {
                     alerModal.attentionModal.show();
-                } else {
-                    alert("提问失败");
+                    ajaxStatus = true;
                 }
-            },
-            error: function () {
-                alerModal.attentionModal.show();
-            }
-        });
+            });
+        }
     }
 
     function tohtml(data) {
@@ -136,15 +141,119 @@ var questioning = new function () {
                    </div>\
                </div>\
         </div>";
-        
+
         document.getElementById("questioning-List").insertAdjacentHTML("afterBegin", str);
     }
     return {
         questioningClick: function (btn) {
+            document.getElementById("questioning-footer").style.display = "none";
             showFrom();
-            btn.parentNode.style.display = "none";
             window.scrollTo(0, 0);
+
         },
         postQuestion: postQuestion
     }
 };
+
+var comment = new function () {
+    var ajaxStatus = true;
+    var pageIndex = 0, scrollStatus = true;
+
+    function postForm() {
+        var txt = document.getElementById("comment-txt").value || "";
+        if (txt.Trim() === "") {
+            alert("请输入评论内容！");
+            return;
+        }
+        if (ajaxStatus) {
+            ajaxStatus = false;
+            $.ajax({
+                type: 'post',
+                url: "/wap/create",
+                data: { type: "C", content: txt, uid: userInfo.uid },
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data) {
+                        console.log("评论成功！");
+                        document.getElementById("comment-form").style.display = "block";
+                    } else {
+                        alert("评论失败");
+                    }
+                    ajaxStatus = true;
+                },
+                error: function () {
+                    ajaxStatus = true;
+                    alert("评论失败");
+                }
+
+            });
+        }
+
+    }
+
+    function srcoll() {
+        document.body.onscroll = function () {
+            var _this = this;
+            var clientHeight = _this.innerHeight;
+            if (_this.scrollY + clientHeight > (document.body.scrollHeight - 10)) {
+                nextPage();
+            }
+        }
+        nextPage();
+    }
+
+    function nextPage() {
+        if (scrollStatus) {
+            scrollStatus = false;
+            pageIndex++;
+            $.ajax({
+                type: 'get',
+                url: "/wap/comment",
+                data: { id: userInfo.classId, page: pageIndex },
+                cache: false,
+                dataType: 'json',
+                success: function (str) {
+                    scrollStatus = true;
+                    if (str) {
+                        document.getElementById("comment-List").insertAdjacentHTML("beforeend", str);
+                    }
+                },
+                error: function () {
+
+                    scrollStatus = true;
+                }
+
+            });
+        }
+
+    }
+
+    return {
+        click: function () {
+            document.getElementById("comment-footer").style.display = "none";
+            setTimeout(function () {
+                document.getElementById("comment-form").style.display = "block";
+            }, 300);
+
+        },
+        postForm: postForm,
+        srcoll: srcoll
+    }
+
+};
+var userpage = new function () {
+    function selectItem(item) {
+        item.classList.add("on");
+    }
+
+    return {
+        selectItem: selectItem
+    }
+};
+window.addEventListener("load", function () {
+    if (document.getElementById("comment-List")) {
+        comment.srcoll();
+    }
+
+});
