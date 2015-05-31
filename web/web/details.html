@@ -71,7 +71,7 @@
     <div class="footer2">
         <span class="clicbtn" ontouchstart="alerModal.shareModal.show()">一键分享</span>
     </div>
-    <table class="alert" id="divShare" style="display: none;">
+    <table class="alert" id="divShare" style="display: none;" onclick="alerModal.shareModal.bgHide()">
         <tr>
             <td>
                 <div class="info">
@@ -97,5 +97,12 @@
             </td>
         </tr>
     </table>
+    <script type="text/javascript">
+        window.userInfo = {
+            uid: "", //用户ID
+            classId: ""  //资管课堂id
+        }
+
+    </script>
 </body>
 </html>

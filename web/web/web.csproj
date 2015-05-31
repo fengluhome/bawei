@@ -75,7 +75,6 @@
     <Content Include="images\1x\h.png" />
     <Content Include="images\1x\o.png" />
     <Content Include="images\1x\r.png" />
-    <Content Include="images\1x\r_j.png" />
     <Content Include="images\1x\r_jx1.png" />
     <Content Include="images\1x\r_j_2.png" />
     <Content Include="images\1x\tip.png" />
@@ -98,6 +97,7 @@
     <Content Include="js\ajax.js" />
     <Content Include="js\index.js" />
     <Content Include="html\share.html" />
+    <Content Include="questioning.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
