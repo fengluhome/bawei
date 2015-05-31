@@ -86,7 +86,6 @@
     <Content Include="images\2x\h.png" />
     <Content Include="images\2x\o.png" />
     <Content Include="images\2x\r.png" />
-    <Content Include="images\2x\r_j.png" />
     <Content Include="images\2x\r_jx2.png" />
     <Content Include="images\2x\r_j_2.png" />
     <Content Include="images\2x\tip.png" />

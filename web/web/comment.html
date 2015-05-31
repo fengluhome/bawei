@@ -115,7 +115,10 @@
     <div class="footer commetFrom" id="comment-form" style="display: none;">
         <table>
             <tr>
-                <td><input type="text" id="comment-txt" class="form-control" /></td>
+                <td>
+
+                    <textarea id="comment-txt" maxlength="200" onkeyup="comment.txtkeyUp(this)" class="form-control"> </textarea>
+                </td>
                 <td class="btnCont"><span class="clicbtn sendComment" ontouchstart="comment.postForm()">发送</span></td>
             </tr>
         </table>

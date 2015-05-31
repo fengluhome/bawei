@@ -158,7 +158,7 @@ var questioning = new function () {
 var comment = new function () {
     var ajaxStatus = true;
     var pageIndex = 0, scrollStatus = true;
-
+    var txtheight = 40;
     function postForm() {
         var txt = document.getElementById("comment-txt").value || "";
         if (txt.Trim() === "") {
@@ -176,7 +176,12 @@ var comment = new function () {
                 success: function (data) {
                     if (data) {
                         console.log("评论成功！");
-                        document.getElementById("comment-form").style.display = "block";
+                        setTimeout(function () {
+                            var dom = document.getElementById("comment-txt");
+                            dom.style.height = "40px";
+                            dom.value = "";
+                        }, 600);
+
                     } else {
                         alert("评论失败");
                     }
@@ -185,6 +190,7 @@ var comment = new function () {
                 error: function () {
                     ajaxStatus = true;
                     alert("评论失败");
+
                 }
 
             });
@@ -238,7 +244,14 @@ var comment = new function () {
 
         },
         postForm: postForm,
-        srcoll: srcoll
+        srcoll: srcoll,
+        txtkeyUp: function (dom) {
+            if (dom.scrollTop > 0) {
+                dom.style.height = dom.offsetHeight + 40 + "px";
+            }
+
+        }
+
     }
 
 };
