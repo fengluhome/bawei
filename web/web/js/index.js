@@ -87,8 +87,9 @@ var questioning = new function () {
     }
     var ajaxStatus = true;
     function postQuestion() {
-        var txt = document.getElementById("questioning-form-txt").value || "";
-
+        var dom = document.getElementById("questioning-form-txt");
+        var txt = dom.value || "";
+        dom.blur();
         if (txt.Trim() === "") {
             alert("请输入提问内容");
             return;
@@ -147,9 +148,12 @@ var questioning = new function () {
     return {
         questioningClick: function (btn) {
             document.getElementById("questioning-footer").style.display = "none";
+            document.getElementById("querstion-desccrion").style.display = "none";
             showFrom();
             window.scrollTo(0, 0);
+            // querstion-desccrion
 
+            document.getElementById("question-btngrop").style.marginBottom = "35px";
         },
         postQuestion: postQuestion
     }
@@ -180,6 +184,7 @@ var comment = new function () {
                             var dom = document.getElementById("comment-txt");
                             dom.style.height = "40px";
                             dom.value = "";
+                            document.getElementById("comment-form").style.height = "69px";
                         }, 600);
 
                     } else {
@@ -190,7 +195,6 @@ var comment = new function () {
                 error: function () {
                     ajaxStatus = true;
                     alert("评论失败");
-
                 }
 
             });
@@ -198,42 +202,8 @@ var comment = new function () {
 
     }
 
-    function srcoll() {
-        document.body.onscroll = function () {
-            var _this = this;
-            var clientHeight = _this.innerHeight;
-            if (_this.scrollY + clientHeight > (document.body.scrollHeight - 10)) {
-                nextPage();
-            }
-        }
-        nextPage();
-    }
 
-    function nextPage() {
-        if (scrollStatus) {
-            scrollStatus = false;
-            pageIndex++;
-            $.ajax({
-                type: 'get',
-                url: "/wap/comment",
-                data: { id: userInfo.classId, page: pageIndex },
-                cache: false,
-                dataType: 'json',
-                success: function (str) {
-                    scrollStatus = true;
-                    if (str) {
-                        document.getElementById("comment-List").insertAdjacentHTML("beforeend", str);
-                    }
-                },
-                error: function () {
-
-                    scrollStatus = true;
-                }
-
-            });
-        }
-
-    }
+    var divHeight = null;
 
     return {
         click: function () {
@@ -244,11 +214,19 @@ var comment = new function () {
 
         },
         postForm: postForm,
-        srcoll: srcoll,
         txtkeyUp: function (dom) {
-            if (dom.scrollTop > 0) {
-                dom.style.height = dom.offsetHeight + 40 + "px";
+            var form = document.getElementById("comment-form");
+            if (divHeight === null) {
+                divHeight = form.offsetHeight;
             }
+            if (dom.scrollTop > 0) {
+                dom.style.height = dom.offsetHeight + 15 + "px";
+
+                form.style.height = form.style.offsetHeight + 15 + "px";
+            }
+
+            form.style.bottom = "0px";
+
 
         }
 
@@ -265,8 +243,6 @@ var userpage = new function () {
     }
 };
 window.addEventListener("load", function () {
-    if (document.getElementById("comment-List")) {
-        comment.srcoll();
-    }
+
 
 });

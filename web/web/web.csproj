@@ -68,6 +68,7 @@
     <Content Include="comment.html" />
     <Content Include="css\global.css" />
     <Content Include="css\index.css" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="html\comment.html" />
     <Content Include="html\details.html" />
     <Content Include="html\questioning-alert.html" />

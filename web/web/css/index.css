@@ -8,6 +8,9 @@
     background-color: #fff;
     text-align: center;
     z-index: 1;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,.2);
 }
 
     .header .icon-header {
@@ -15,8 +18,8 @@
         width: 20px;
         height: 20px;
         background-repeat: no-repeat;
-        background-image: url(/images/1x/r.png);
-        background-image: -webkit-image-set(url(/images/1x/r.png) 1x,url(/images/2x/r.png) 2x);
+        background-image: url(/static/assets/img/school/1x/r.png);
+        background-image: -webkit-image-set(url(/static/assets/img/school/1x/r.png) 1x,url(/static/assets/img/school/2x/r.png) 2x);
         background-position: center;
         position: absolute;
         right: 17px;
@@ -44,6 +47,7 @@
         float: left;
         text-align: center;
         line-height: 40px;
+        font-weight: bold;
     }
 
         .menu ul li.selectd {
@@ -67,8 +71,8 @@
             font-size: 17px;
             text-align: center;
             color: #5abc9b;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin-top: 11px;
+            margin-bottom: 15px;
         }
 
         .article .info .table tr td.title {
@@ -122,6 +126,7 @@
     padding: 12px 18px;
     text-align: center;
     background-color: #ffffff;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,.2);
     z-index: 1;
 }
 
@@ -136,7 +141,7 @@
 
 .user-header {
     height: 76px;
-    width: 70px;
+    width: 76px;
     border-radius: 50px;
 }
 
@@ -153,8 +158,8 @@
         width: 58px;
         height: 45px;
         background-repeat: no-repeat;
-        background-image: url(/images/1x/tip.png);
-        background-image: -webkit-image-set(url(/images/1x/tip.png) 1x,url(/images/2x/tip.png) 2x);
+        background-image: url(/static/assets/img/school/1x/tip.png);
+        background-image: -webkit-image-set(url(/static/assets/img/school/1x/tip.png) 1x,url(/static/assets/img/school/2x/tip.png) 2x);
         background-position: center;
     }
 
@@ -163,8 +168,8 @@
         width: 14px;
         height: 26px;
         background-repeat: no-repeat;
-        background-image: url(/images/1x/tips.png);
-        background-image: -webkit-image-set(url(/images/1x/tips.png) 1x,url(/images/2x/tips.png) 2x);
+        background-image: url(/static/assets/img/school/1x/tips.png);
+        background-image: -webkit-image-set(url(/static/assets/img/school/1x/tips.png) 1x,url(/static/assets/img/school/2x/tips.png) 2x);
         vertical-align: middle;
     }
 
@@ -177,15 +182,15 @@
 
     .questioning .descrioin {
         width: 100%;
-        height: 70px;
+        height: 56px;
+        line-height: 56px;
         text-align: center;
         color: #999999;
-        padding-top: 23px;
     }
 
     .questioning .content {
         background-color: #ffffff;
-        padding: 5px 15px 15px 17px;
+        padding: 5px 15px 8px 17px;
         margin-bottom: 10px;
     }
 
@@ -257,8 +262,8 @@
     .questioning .btngroup {
         width: 95%;
         margin: 0 auto;
-        margin-top: 40px;
-        margin-bottom: 100px;
+        margin-top: 28px;
+        margin-bottom: 85px;
     }
 
         .questioning .btngroup td {
@@ -294,6 +299,9 @@
             padding: 8px;
             border-radius: 3px;
             margin-top: 15px;
+            font-size: 14px;
+            outline: none;
+            box-shadow: none;
         }
 
         .questioning .postMesage .note {
@@ -331,8 +339,8 @@
                 height: 27px;
                 width: 27px;
                 background-repeat: no-repeat;
-                background-image: url(/images/1x/o.png);
-                background-image: -webkit-image-set(url(/images/1x/o.png) 1x,url(/images/2x/o.png) 2x);
+                background-image: url(/static/assets/img/school/1x/o.png);
+                background-image: -webkit-image-set(url(/static/assets/img/school/1x/o.png) 1x,url(/static/assets/img/school/2x/o.png) 2x);
                 position: absolute;
                 right: 0;
             }
@@ -342,6 +350,7 @@
             color: #5abc9b;
             text-align: center;
             padding-top: 10px;
+            font-weight: bold;
         }
 
         .questioning .modalDiv .conteTxt {
@@ -371,7 +380,6 @@
                 }
 
 .comment {
-    padding-bottom: 80px;
 }
 
     .comment .item {
@@ -398,6 +406,45 @@
         .comment .item .txt {
             padding: 12px 0px 10px;
         }
+
+    .comment .btngroup {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 28px;
+        margin-bottom: 10px;
+    }
+
+        .comment .btngroup td {
+            text-align: center;
+        }
+
+        .comment .btngroup .page {
+            display: inline-block;
+            color: #333;
+            font-size: 16px;
+            width: 80%;
+            background-color: #fff;
+            line-height: 38px;
+            height: 38px;
+            border: solid 1px #c9c9c9;
+            border-radius: 6px;
+        }
+
+            .comment .btngroup .page.disabled {
+                color: #999999;
+            }
+
+.comment-scroll {
+    position: fixed;
+    top: 53px;
+    bottom: 70px;
+    width: 100%;
+    overflow: scroll;
+}
+
+    .comment-scroll .vedio {
+        margin: 0;
+    }
 
 .form-control {
     display: block;
@@ -437,6 +484,8 @@
         width: 100%;
         min-width: 85px;
     }
+
+ 
 
 .userDiv {
 }
@@ -481,8 +530,8 @@
         width: 24px;
         height: 24px;
         background-repeat: no-repeat;
-        background-image: url(/images/1x/h.png);
-        background-image: -webkit-image-set(url(/images/1x/h.png) 1x,url(/images/2x/h.png) 2x);
+        background-image: url(/static/assets/img/school/1x/h.png);
+        background-image: -webkit-image-set(url(/static/assets/img/school/1x/h.png) 1x,url(/static/assets/img/school/2x/h.png) 2x);
         background-position: center;
         position: absolute;
         right: 17px;
@@ -503,8 +552,8 @@
         margin-right: 8px;
         display: inline-block;
         background-repeat: no-repeat;
-        background-image: url(/images/1x/v.png);
-        background-image: -webkit-image-set(url(/images/1x/v.png) 1x,url(/images/2x/v.png) 2x);
+        background-image: url(/static/assets/img/school/1x/v.png);
+        background-image: -webkit-image-set(url(/static/assets/img/school/1x/v.png) 1x,url(/static/assets/img/school/2x/v.png) 2x);
         position: relative;
         top: -1px;
         vertical-align: sub;
@@ -538,8 +587,8 @@
                 right: 12px;
                 top: 22px;
                 background-repeat: no-repeat;
-                background-image: url(/images/1x/r_jx1.png);
-                background-image: -webkit-image-set(url(/images/1x/r_jx1.png) 1x,url(/images/2x/r_jx2.png) 2x);
+                background-image: url(/static/assets/img/school/1x/r_jx1.png);
+                background-image: -webkit-image-set(url(/static/assets/img/school/1x/r_jx1.png) 1x,url(/static/assets/img/school/2x/r_jx2.png) 2x);
             }
 
             .userDiv .courseList li.on {
@@ -548,6 +597,6 @@
 
                 .userDiv .courseList li.on .con-target {
                     background-repeat: no-repeat;
-                    background-image: url(/images/1x/r_j_2.png);
-                    background-image: -webkit-image-set(url(/images/1x/r_j_2.png) 1x,url(/images/2x/r_j_2.png) 2x);
+                    background-image: url(/static/assets/img/school/1x/r_j_2.png);
+                    background-image: -webkit-image-set(url(/static/assets/img/school/1x/r_j_2.png) 1x,url(/static/assets/img/school/2x/r_j_2.png) 2x);
                 }
