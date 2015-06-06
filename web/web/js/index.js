@@ -115,6 +115,7 @@ var questioning = new function () {
                         txtdom.value = "";
                         txtdom.blur();
                         alerModal.attentionModal.show();
+                        tohtml(data.question);
                     } else {
                         alert("提问失败");
                     }
@@ -203,12 +204,11 @@ var comment = new function () {
                 success: function (data) {
                     if (data) {
                         console.log("评论成功！");
-                        setTimeout(function () {
-                            var dom = document.getElementById("comment-txt");
-                            dom.style.height = "40px";
-                            dom.value = "";
-                            document.getElementById("comment-form").style.height = "69px";
-                        }, 600);
+
+                        var dom = document.getElementById("comment-txt");
+                        dom.value = "";
+                        toHtml(data.comment);
+
 
                     } else {
                         alert("评论失败");
@@ -218,6 +218,9 @@ var comment = new function () {
                 error: function () {
                     ajaxStatus = true;
                     alert("评论失败");
+                    var dom = document.getElementById("comment-txt");
+                    dom.value = "";
+                    toHtml(data.comment);
                 }
 
             });
@@ -225,6 +228,29 @@ var comment = new function () {
 
     }
 
+    function toHtml(data) {
+
+        var str = "<div class='item'>\
+                <table>\
+                    <tr>\
+                        <td style=' width: 72px;'>\
+                            <span class='media-object' style='background: url("+ data.imgHead + ") no-repeat; background-size: contain;; '></span>\
+                        </td>\
+                        <td>\
+                            <div>"+ data.name + "</div>\
+                            <div class='time'>"+ data.time + "</div>\
+                        </td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan='2'>\
+                            <div class='txt'>"+ data.content + "</div>\
+                        </td>\
+                    </tr>\
+                </table>\
+            </div>";
+
+        document.getElementById("comment-List").insertAdjacentHTML("afterBegin", str);
+    }
 
     var divHeight = null;
 
