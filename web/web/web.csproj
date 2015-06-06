@@ -68,7 +68,6 @@
     <Content Include="comment.html" />
     <Content Include="css\global.css" />
     <Content Include="css\index.css" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="html\comment.html" />
     <Content Include="html\details.html" />
     <Content Include="html\questioning-alert.html" />
@@ -99,6 +98,26 @@
     <Content Include="js\index.js" />
     <Content Include="html\share.html" />
     <Content Include="questioning.html" />
+    <Content Include="static\assets\img\school\1x\h.png" />
+    <Content Include="static\assets\img\school\1x\o.png" />
+    <Content Include="static\assets\img\school\1x\r.png" />
+    <Content Include="static\assets\img\school\1x\r_jx1.png" />
+    <Content Include="static\assets\img\school\1x\r_j_2.png" />
+    <Content Include="static\assets\img\school\1x\tip.png" />
+    <Content Include="static\assets\img\school\1x\tips.png" />
+    <Content Include="static\assets\img\school\1x\top_l_j.png" />
+    <Content Include="static\assets\img\school\1x\v.png" />
+    <Content Include="static\assets\img\school\2x\bf.png" />
+    <Content Include="static\assets\img\school\2x\h.png" />
+    <Content Include="static\assets\img\school\2x\o.png" />
+    <Content Include="static\assets\img\school\2x\r.png" />
+    <Content Include="static\assets\img\school\2x\r_jx2.png" />
+    <Content Include="static\assets\img\school\2x\r_j_2.png" />
+    <Content Include="static\assets\img\school\2x\tip.png" />
+    <Content Include="static\assets\img\school\2x\tips.png" />
+    <Content Include="static\assets\img\school\2x\top_l_j.png" />
+    <Content Include="static\assets\img\school\2x\v.png" />
+    <Content Include="static\assets\img\school\head.png" />
     <Content Include="user.html" />
     <Content Include="Web.config" />
   </ItemGroup>

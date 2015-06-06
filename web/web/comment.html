@@ -9,35 +9,53 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <title></title>
-    <link href="/css/global.css" rel="stylesheet" />
-    <link href="/css/index.css" rel="stylesheet" />
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
     <script src="js/ajax.js"></script>
     <script src="js/index.js"></script>
 
 </head>
 <body>
-
-    <header class="header" style="position: absolute;">
-        资管咖啡
-        <span class="icon-header"></span>
-    </header>
-    <div class="comment-scroll" style="position: absolute;">
+    <div class=topdiv>
+        <header class="header">
+            资管咖啡
+            <span class="icon-header"></span>
+        </header>
         <div class="vedio">
 
         </div>
         <div class="menu">
             <ul>
-                <li>详&nbsp;&nbsp;情</li>
-                <li>提&nbsp;&nbsp;问</li>
-                <li class="selectd">评&nbsp;&nbsp;论</li>
+                <li ontouchstart="window.location='details.html'">详&nbsp;&nbsp;情</li>
+                <li ontouchstart="window.location='questioning.html'">提&nbsp;&nbsp;问</li>
+                <li class="selectd" ontouchstart="window.location='comment.html'">评&nbsp;&nbsp;论</li>
             </ul>
         </div>
+    </div>
+    <div class="contentDiv">
+        <table class="postMesage" id="comment-posMessage">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <textarea class="text" id="questioning-form-txt" onblur="questioning.blur(this)" onfocus="questioning.foucs(this)" maxlength="430" placeholder="欢迎您评论..."></textarea>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2" style="overflow: hidden;">
+                        <span class="note"> 您可以输入430个字！</span> <span ontouchstart="questioning.postQuestion(this)" class="clicbtn btn">提交</span>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
         <div class="comment" id="comment-List">
             <div class="item">
                 <table>
                     <tr>
                         <td style=" width: 72px;">
-                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: cover; "></span>
+                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
 
                         </td>
                         <td>
@@ -56,7 +74,7 @@
                 <table>
                     <tr>
                         <td style=" width: 72px;">
-                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: cover; "></span>
+                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
                         </td>
                         <td>
                             <div>梁海明</div>
@@ -74,7 +92,7 @@
                 <table>
                     <tr>
                         <td style=" width: 72px;">
-                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: cover; "></span>
+                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
 
                         </td>
                         <td>
@@ -93,7 +111,7 @@
                 <table>
                     <tr>
                         <td style=" width: 72px;">
-                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: cover; "></span>
+                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
 
                         </td>
                         <td>
@@ -119,7 +137,8 @@
             </table>
         </div>
     </div>
-    <div class="footer" id="comment-footer" onclick="comment.click()" style="position: absolute;">
+
+    <!--<div class="footer" id="comment-footer" onclick="comment.click()">
         <span class="clicbtn">要我评论</span>
     </div>
     <div class="footer commetFrom" id="comment-form" style="display: none; ">
@@ -132,7 +151,7 @@
                 <td class="btnCont"><span class="clicbtn sendComment" ontouchstart="comment.postForm()">发送</span></td>
             </tr>
         </table>
-    </div>
+    </div>-->
     <script type="text/javascript">
         window.userInfo = {
             uid: "", //用户ID

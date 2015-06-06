@@ -1,4 +1,10 @@
-﻿String.prototype.Trim = function () {
+﻿var client = {
+    isIos: (function () {
+        return navigator.userAgent.indexOf('iPhone') > -1;
+    }())
+};
+
+String.prototype.Trim = function () {
     var whitespace = ' \n\r\t\f\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u3000', str = this;
     for (var i = 0; i < str.length; i++) {
         if (whitespace.indexOf(str.charAt(i)) === -1) {
@@ -105,7 +111,9 @@ var questioning = new function () {
                 success: function (data) {
                     if (data.result) {
                         console.log("提问成功！");
-                        tohtml(data.question);
+                        var txtdom = document.getElementById("questioning-form-txt");
+                        txtdom.value = "";
+                        txtdom.blur();
                         alerModal.attentionModal.show();
                     } else {
                         alert("提问失败");
@@ -133,7 +141,7 @@ var questioning = new function () {
                <div class='media'>\
                    <div class='media-left'>\
                        <a href='#'>\
-                           <span class='media-object' style='background: url("+ data.imgHead + ") no-repeat; background-size: cover; '></span>\
+                           <span class='media-object' style='background: url("+ data.imgHead + ") no-repeat; background-size: contain;; '></span>\
                        </a>\
                    </div>\
                    <div class='media-body'>\
@@ -155,7 +163,22 @@ var questioning = new function () {
 
             document.getElementById("question-btngrop").style.marginBottom = "35px";
         },
-        postQuestion: postQuestion
+        postQuestion: postQuestion,
+        blur: function (dom) {
+            window.scroll(0, 0);
+            if (client.isIos) {
+
+            } else {
+                document.querySelector(".topdiv").style.position = "fixed";
+            }
+
+        },
+        foucs: function () {
+            if (client.isIos) {
+            } else {
+                document.querySelector(".topdiv").style.position = "absolute";
+            }
+        }
     }
 };
 
