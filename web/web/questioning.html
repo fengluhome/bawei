@@ -15,6 +15,30 @@
     <script src="js/index.js"></script>
 </head>
 <body>
+    <div class="questioning">
+        <table class="alert" style="display: none;" id="querstioning-alert">
+            <tr>
+                <td>
+                    <div class="modalDiv modal">
+                        <div class="close"><span class="con-clsoe" ontouchstart="alerModal.attentionModal.hide()"></span></div>
+                        <div class="title">提交成功</div>
+                        <div class="conteTxt">
+                            关注智信网公众号，你可以通过微信接收
+                            主讲嘉宾的回复。
+                        </div>
+                        <div class="modal-btngroup">
+                            <table>
+                                <tr>
+                                    <td style="padding-right: 9px;"> <span class="clicbtn" ontouchstart="alerModal.attentionModal.hide()">残忍拒绝</span></td>
+                                    <td style="padding-left: 9px;"><span class="clicbtn" ontouchstart="window.location='/'">去关注</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class=topdiv>
         <header class="header">
             资管咖啡
@@ -57,9 +81,6 @@
                     </tr>
                 </table>
             </div>
-
-
-
             <div id="questioning-List">
                 <div class="content">
                     <div class="media">
@@ -112,8 +133,7 @@
             </div>
             <table class="btngroup" id="question-btngrop">
                 <tr>
-                    <td><a class="page disabled clicbtn" href="">上一页</a></td>
-                    <td><a class="page clicbtn" href="">下一页</a></td>
+                    <td><a class="page clicbtn" href="">显示下10条</a></td>
                 </tr>
             </table>
 
@@ -121,30 +141,7 @@
 
         </div>
     </div>
-    <div class="questioning">
-        <table class="alert" style="display: none;" id="querstioning-alert">
-            <tr>
-                <td>
-                    <div class="modalDiv modal">
-                        <div class="close"><span class="con-clsoe" ontouchstart="alerModal.attentionModal.hide()"></span></div>
-                        <div class="title">提交成功</div>
-                        <div class="conteTxt">
-                            关注智信网公众号，你可以通过微信接收
-                            主讲嘉宾的回复。
-                        </div>
-                        <div class="modal-btngroup">
-                            <table>
-                                <tr>
-                                    <td style="padding-right: 9px;"> <span class="clicbtn" ontouchstart="alerModal.attentionModal.hide()">残忍拒绝</span></td>
-                                    <td style="padding-left: 9px;"><span class="clicbtn" ontouchstart="window.location='/'">去关注</span></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div>
+   
     <script type="text/javascript">
         window.userInfo = {
             uid: "", //用户ID
