@@ -15,6 +15,28 @@
     <script src="js/index.js"></script>
 </head>
 <body>
+  
+    <div class=topdiv>
+        <header class="header">
+            资管咖啡
+            <span class="icon-header"></span>
+        </header>
+        <div class="vedio">
+
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li ontouchstart="window.location='details.html'">详&nbsp;&nbsp;情</li>
+                <li class="selectd" ontouchstart="window.location='questioning.html'">提&nbsp;&nbsp;问</li>
+                <li ontouchstart="window.location='comment.html'">评&nbsp;&nbsp;论</li>
+            </ul>
+        </div>
+    </div>
+    <div class="contentDiv">
+     
+    </div>
+   
     <div class="questioning">
         <table class="alert" style="display: none;" id="querstioning-alert">
             <tr>
@@ -39,109 +61,6 @@
             </tr>
         </table>
     </div>
-    <div class=topdiv>
-        <header class="header">
-            资管咖啡
-            <span class="icon-header"></span>
-        </header>
-        <div class="vedio">
-
-        </div>
-
-        <div class="menu">
-            <ul>
-                <li ontouchstart="window.location='details.html'">详&nbsp;&nbsp;情</li>
-                <li class="selectd" ontouchstart="window.location='questioning.html'">提&nbsp;&nbsp;问</li>
-                <li ontouchstart="window.location='comment.html'">评&nbsp;&nbsp;论</li>
-            </ul>
-        </div>
-    </div>
-    <div class="contentDiv">
-        <div class="questioning">
-            <div class="content" style="background:none; margin-bottom: 0px; " id="questioning-form">
-                <table class="postMesage">
-                    <tr>
-                        <td style="width: 60px">
-                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
-
-                        </td>
-                        <td><span> Davia Beckhm</span></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <textarea class="text" id="questioning-form-txt" onfocus="questioning.foucs(this)" onblur=" questioning.blur(this)" maxlength="430" placeholder="您可向主讲人直接提问，主讲人会予以回复"></textarea>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="overflow: hidden;">
-                            <span class="note"> 您可以输入430个字！</span> <span ontouchstart="questioning.postQuestion(this)" class="clicbtn btn">提交</span>
-                        </td>
-
-                    </tr>
-                </table>
-            </div>
-            <div id="questioning-List">
-                <div class="content">
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain; "></span>
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-heading">谢霆锋<span class="time">2015/5/22 14:20</span></div>
-                            <p><span class="begin">问：</span>如何在风口下进行大资产下进行大资产配置操作？</p>
-                        </div>
-                    </div>
-                    <div class="media dasheddiv">
-                        <div class="media-left">
-                            <a href="#">
-                                <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain; "></span>
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-heading">谢霆锋<span class="time">2015/5/22 14:20</span></div>
-                            <p><span class="begin">答：</span>前几天顺丰社区一波三折王卫还是没想清楚一文反响跟预期差不多写此文的目的倒不是要对顺丰指手画脚也不敢妄言给王卫提建议，更不是要针对顺丰电商，只是想以顺丰为例，来探讨一下门店在社区O2O中究竟有没有用，并不是要针对顺丰什么</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content" style="border-bottom: 1px solid #CACACA;">
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-heading">谢霆锋<span class="time">2015/5/22 14:20</span></div>
-                            <p><span class="begin">问：</span>如何在风口下进行大资产下进行大资产配置操作？</p>
-                        </div>
-                    </div>
-                    <div class="media dasheddiv">
-                        <div class="media-left">
-                            <a href="#">
-                                <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-heading">谢霆锋<span class="time">2015/5/22 14:20</span></div>
-                            <p><span class="begin">答：</span>前几天顺丰社区一波三折王卫还是没想清楚一文反响跟预期差不多写此文的目的倒不是要对顺丰指手画脚也不敢妄言给王卫提建议，更不是要针对顺丰电商，只是想以顺丰为例，来探讨一下门店在社区O2O中究竟有没有用，并不是要针对顺丰什么</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <table class="btngroup" id="question-btngrop">
-                <tr>
-                    <td><a class="page clicbtn" href="">显示下10条</a></td>
-                </tr>
-            </table>
-
-
-
-        </div>
-    </div>
-   
     <script type="text/javascript">
         window.userInfo = {
             uid: "", //用户ID

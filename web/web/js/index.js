@@ -87,7 +87,36 @@ var alerModal = new function () {
         attentionModal: attentionModal
     }
 };
+var details = new function () {
+    function request(dom) {
+        if (dom === currentMenu) { return; }
+        if (dom) {
+            currentMenu.classList.remove("selectd");
+            currentMenu = dom;
+            currentMenu.classList.add("selectd");
+        }
+
+        $.ajax({
+            type: 'get',
+            url: "/wap/1",
+            data: {},
+            cache: false,
+            success: function (str) {
+                document.querySelector(".contentDiv").innerHTML = str;
+
+            },
+            error: function () {
+
+            }
+        });
+    }
+    return {
+        request: request
+    }
+};
+
 var questioning = new function () {
+    var pageIndex = 0;
     function showFrom() {
         document.getElementById("questioning-form").style.display = "block";
     }
@@ -131,12 +160,7 @@ var questioning = new function () {
     }
 
     function tohtml(data) {
-        //data = {
-        //    imgHead: "/images/head.png",
-        //    name: "张三",
-        //    time: "2015/5/22 14:20",
-        //    content: "如何理财？"
-        //}
+
         var str =
         " <div class='content'>\
                <div class='media'>\
@@ -153,6 +177,54 @@ var questioning = new function () {
         </div>";
 
         document.getElementById("questioning-List").insertAdjacentHTML("afterBegin", str);
+    }
+
+    function request(dom) {
+        if (dom === currentMenu) { return; }
+        if (dom) {
+            currentMenu.classList.remove("selectd");
+            currentMenu = dom;
+            currentMenu.classList.add("selectd");
+            pageIndex = 0;
+        }
+        $.ajax({
+            type: 'get',
+            url: "/wap/2",
+            data: {},
+            cache: false,
+            success: function (str) {
+                document.querySelector(".contentDiv").innerHTML = str;
+                pageNext();
+            },
+            error: function () {
+
+            }
+        });
+    }
+    var pageSattus = true;
+    function pageNext() {
+        if (pageSattus) {
+            pageSattus = false;
+            pageIndex++;
+            $.ajax({
+                type: 'get',
+                url: "/wap/question/id",
+                cache: false,
+                data: { page: pageIndex },
+                success: function (str) {
+                    if (str) {
+                        document.getElementById("questioning-List").insertAdjacentHTML("beforeend", str);
+                        pageSattus = true;
+                    }
+
+                },
+                error: function () {
+
+                }
+            });
+        }
+
+
     }
     return {
         questioningClick: function (btn) {
@@ -179,14 +251,16 @@ var questioning = new function () {
             } else {
                 document.querySelector(".topdiv").style.position = "absolute";
             }
-        }
+        },
+        request: request,
+        pageNext: pageNext
     }
 };
 
 var comment = new function () {
     var ajaxStatus = true;
-    var pageIndex = 0, scrollStatus = true;
-    var txtheight = 40;
+    var pageIndex = 0;
+
     function postForm() {
         var txt = document.getElementById("comment-txt").value || "";
         if (txt.Trim() === "") {
@@ -203,8 +277,7 @@ var comment = new function () {
                 dataType: 'json',
                 success: function (data) {
                     if (data) {
-                        console.log("评论成功！");
-
+                        alert("评论成功！");
                         var dom = document.getElementById("comment-txt");
                         dom.value = "";
                         toHtml(data.comment);
@@ -252,8 +325,52 @@ var comment = new function () {
         document.getElementById("comment-List").insertAdjacentHTML("afterBegin", str);
     }
 
-    var divHeight = null;
+    function request(dom) {
+        if (dom === currentMenu) { return; }
+        if (dom) {
+            currentMenu.classList.remove("selectd");
+            currentMenu = dom;
+            currentMenu.classList.add("selectd");
+            pageIndex = 0;
+        }
+        $.ajax({
+            type: 'get',
+            url: "/wap/3",
+            data: {},
+            cache: false,
+            success: function (str) {
+                document.querySelector(".contentDiv").innerHTML = str;
+                pageNext();
+            },
+            error: function () {
 
+            }
+        });
+    }
+    var pageSattus = true;
+    function pageNext() {
+        if (pageSattus) {
+            pageSattus = false;
+            pageIndex++;
+            $.ajax({
+                type: 'get',
+                url: "/wap/comment/id",
+                data: { page: pageIndex },
+                success: function (str) {
+                    if (str) {
+                        document.getElementById("comment-List").insertAdjacentHTML("beforeend", str);
+                        pageSattus = true;
+                    }
+
+                },
+                error: function () {
+
+                }
+            });
+        }
+
+
+    }
     return {
         click: function () {
             document.getElementById("comment-footer").style.display = "none";
@@ -263,24 +380,9 @@ var comment = new function () {
 
         },
         postForm: postForm,
-        txtkeyUp: function (dom) {
-            var form = document.getElementById("comment-form");
-            if (divHeight === null) {
-                divHeight = form.offsetHeight;
-            }
-            if (dom.scrollTop > 0) {
-                dom.style.height = dom.offsetHeight + 15 + "px";
-
-                form.style.height = form.style.offsetHeight + 15 + "px";
-            }
-
-            form.style.bottom = "0px";
-
-
-        }
-
+        request: request,
+        pageNext: pageNext
     }
-
 };
 var userpage = new function () {
     function selectItem(item) {
@@ -291,7 +393,28 @@ var userpage = new function () {
         selectItem: selectItem
     }
 };
+var currentMenu = null;
+var menuPenal = function () {
+
+    var lis = document.querySelectorAll(".menu ul li");
+    for (var i = 0; i < lis.length; i++) {
+        if (lis[i].classList.contains("selectd")) {
+            currentMenu = lis[i];
+            if (i === 0) {
+                details.request();
+            } else if (i === 1) {
+                questioning.request();
+            } else if (i === 2) {
+                comment.request();
+            }
+
+            break;
+        }
+    }
+
+};
+
 window.addEventListener("load", function () {
 
-
+    menuPenal();
 });

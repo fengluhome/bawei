@@ -97,6 +97,7 @@
     <Content Include="js\ajax.js" />
     <Content Include="js\index.js" />
     <Content Include="html\share.html" />
+    <Content Include="js\test.js" />
     <Content Include="questioning.html" />
     <Content Include="static\assets\img\school\1x\h.png" />
     <Content Include="static\assets\img\school\1x\o.png" />

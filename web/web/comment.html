@@ -11,8 +11,15 @@
     <title></title>
     <link href="css/global.css" rel="stylesheet" />
     <link href="css/index.css" rel="stylesheet" />
-    <script src="js/ajax.js"></script>
+
+    
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+  
+    <script src="http://cdn.bootcss.com/jquery-mockjax/1.6.2/jquery.mockjax.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/test.js"></script>
+ 
 
 </head>
 <body>
@@ -26,131 +33,43 @@
         </div>
         <div class="menu">
             <ul>
-                <li ontouchstart="window.location='details.html'">详&nbsp;&nbsp;情</li>
-                <li ontouchstart="window.location='questioning.html'">提&nbsp;&nbsp;问</li>
-                <li class="selectd" ontouchstart="window.location='comment.html'">评&nbsp;&nbsp;论</li>
+                <li ontouchstart="details.request(this)">详&nbsp;&nbsp;情</li>
+                <li ontouchstart="questioning.request(this)">提&nbsp;&nbsp;问</li>
+                <li class="selectd" ontouchstart="comment.request(this)">评&nbsp;&nbsp;论</li>
             </ul>
         </div>
     </div>
-    <div class="contentDiv">
-        <table class="postMesage" id="comment-posMessage">
-            <tbody>
-                <tr>
-                    <td colspan="2">
-                        <textarea class="text" id="comment-txt" onblur="questioning.blur(this)" onfocus="questioning.foucs(this)" maxlength="430" placeholder="欢迎您评论..."></textarea>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td colspan="2" style="overflow: hidden;">
-                        <span class="note"> 您可以输入430个字！</span> <span ontouchstart="comment.postForm(this)" class="clicbtn btn">提交</span>
-                    </td>
-
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="comment" id="comment-List">
-            <div class='item'>
-                <table>
-                    <tr>
-                        <td style=' width: 72px;'>
-                            <span class='media-object' style='background: url(/images/head.png) no-repeat; background-size: contain;; '></span>
-
-                        </td>
-                        <td>
-                            <div>梁海明</div>
-                            <div class='time'>05-22  14:00</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan='2'>
-                            <div class='txt'>前几天顺丰社区波三折王卫还是没想清楚一文反响跟预期差不多写此文的目的倒不是要对顺丰指手画脚。</div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="item">
-                <table>
-                    <tr>
-                        <td style=" width: 72px;">
-                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
-                        </td>
-                        <td>
-                            <div>梁海明</div>
-                            <div class="time">05-22  14:00</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="txt">前几天顺丰社区波三折王卫还是没想清楚一文反响跟预期差不多写此文的目的倒不是要对顺丰指手画脚。</div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="item">
-                <table>
-                    <tr>
-                        <td style=" width: 72px;">
-                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
-
-                        </td>
-                        <td>
-                            <div>梁海明</div>
-                            <div class="time">05-22  14:00</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="txt">前几天顺丰社区波三折王卫还是没想清楚一文反响跟预期差不多写此文的目的倒不是要对顺丰指手画脚。</div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="item">
-                <table>
-                    <tr>
-                        <td style=" width: 72px;">
-                            <span class="media-object" style="background: url(/images/head.png) no-repeat; background-size: contain;; "></span>
-
-                        </td>
-                        <td>
-                            <div>梁海明</div>
-                            <div class="time">05-22  14:00</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <div class="txt">前几天顺丰社区波三折王卫还是没想清楚一文反响跟预期差不多写此文的目的倒不是要对顺丰指手画脚。</div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <table class="btngroup">
-                <tbody>
-                    <tr>
-                        <td><a class="page clicbtn" href="">显示下10条</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class='contentDiv'>
+     
     </div>
+  
+    <table class="alert" id="divShare" style="display: none;" onclick="alerModal.shareModal.bgHide()">
+        <tr>
+            <td>
+                <div class="info">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="icon-arrows"> </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="position: relative; top:-5px;">
+                                    <div>点击右上角菜单 <span class="inco-menu"></span></div>
+                                    <div class="bottontxt">分享到朋友圈或朋友</div>
+                                </div>
 
-    <!--<div class="footer" id="comment-footer" onclick="comment.click()">
-        <span class="clicbtn">要我评论</span>
-    </div>
-    <div class="footer commetFrom" id="comment-form" style="display: none; ">
-        <table>
-            <tr>
-                <td>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
 
-                    <textarea id="comment-txt" maxlength="200" onkeyup="comment.txtkeyUp(this)" class="form-control"></textarea>
-                </td>
-                <td class="btnCont"><span class="clicbtn sendComment" ontouchstart="comment.postForm()">发送</span></td>
-            </tr>
-        </table>
-    </div>-->
     <script type="text/javascript">
         window.userInfo = {
             uid: "", //用户ID
