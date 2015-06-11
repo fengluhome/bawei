@@ -198,76 +198,76 @@
         color: #999999;
     }
 
-    .questioning .content {
+    .questioning #questioning-List .content {
         background-color: #ffffff;
         padding: 5px 15px 8px 17px;
         margin-bottom: 10px;
     }
 
-        .questioning .content .media:first-child {
-            margin-top: 0;
+    .questioning .content .media:first-child {
+        margin-top: 0;
+    }
+
+    .questioning .content .media {
+        padding: 10px 0px;
+    }
+
+    .questioning .content .media, .questioning .content .media-body {
+        overflow: hidden;
+        zoom: 1;
+    }
+
+    .questioning .content .media-body {
+        width: 10000px;
+    }
+
+    .questioning .content .media-body, .questioning .content .media-left, .questioning .content .media-right {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .questioning .content .media-left, .questioning .content .media > .pull-left {
+        padding-right: 10px;
+    }
+
+    .questioning .content .media-object {
+        display: block;
+        width: 52px;
+        height: 52px;
+        border-radius: 50px;
+        position: relative;
+        top: 4px;
+        margin-bottom: 5px;
+    }
+
+
+
+
+
+    .questioning .content .media-body, .questioning .content .media-left, .questioning .content .media-right {
+        display: table-cell;
+        vertical-align: top;
+        position: relative;
+    }
+
+    .questioning .content .media-heading {
+        margin-top: 0;
+        margin-bottom: 5px;
+        color: #999999;
+    }
+
+        .questioning .content .media-heading .time {
+            position: absolute;
+            right: 0;
         }
 
-        .questioning .content .media {
-            padding: 10px 0px;
-        }
+    .questioning .content .media-body .begin {
+        color: #5abc9b;
+    }
 
-        .questioning .content .media, .questioning .content .media-body {
-            overflow: hidden;
-            zoom: 1;
-        }
-
-        .questioning .content .media-body {
-            width: 10000px;
-        }
-
-        .questioning .content .media-body, .questioning .content .media-left, .questioning .content .media-right {
-            display: table-cell;
-            vertical-align: top;
-        }
-
-        .questioning .content .media-left, .questioning .content .media > .pull-left {
-            padding-right: 10px;
-        }
-
-        .questioning .content .media-object {
-            display: block;
-            width: 52px;
-            height: 52px;
-            border-radius: 50px;
-            position: relative;
-            top: 4px;
-            margin-bottom: 5px;
-        }
-
-
-
-
-
-        .questioning .content .media-body, .questioning .content .media-left, .questioning .content .media-right {
-            display: table-cell;
-            vertical-align: top;
-            position: relative;
-        }
-
-        .questioning .content .media-heading {
-            margin-top: 0;
-            margin-bottom: 5px;
-            color: #999999;
-        }
-
-            .questioning .content .media-heading .time {
-                position: absolute;
-                right: 0;
-            }
-
-        .questioning .content .media-body .begin {
-            color: #5abc9b;
-        }
-
-        .questioning .content .dasheddiv {
-            border-top: 1px dashed #CACACA;
-        }
+    .questioning .content .dasheddiv {
+        border-top: 1px dashed #CACACA;
+    }
 
     .questioning .btngroup {
         width: 95%;
@@ -290,6 +290,7 @@
             height: 38px;
             border: solid 1px #c9c9c9;
             border-radius: 6px;
+            display: none;
         }
 
             .questioning .btngroup .page.disabled {
@@ -297,8 +298,10 @@
             }
 
     .questioning .postMesage {
-        width: 100%;
+        width: 90%;
         padding-top: 0px;
+        margin: 0 auto;
+        padding-bottom: 8px;
     }
 
 
@@ -390,7 +393,6 @@
                 }
 
 .comment {
-    margin-top: 10px;
 }
 
     .comment .item {
@@ -440,6 +442,7 @@
             height: 38px;
             border: solid 1px #c9c9c9;
             border-radius: 6px;
+            display: none;
         }
 
             .comment .btngroup .page.disabled {
@@ -451,6 +454,7 @@
     width: 90%;
     padding-top: 0px;
     margin: 0 auto;
+    margin-bottom: 8px;
 }
 
 
@@ -651,4 +655,26 @@
                     background-image: -webkit-image-set(url(/static/assets/img/school/1x/r_j_2.png) 1x,url(/static/assets/img/school/2x/r_j_2.png) 2x);
                 }
 
- 
+.loginbtn {
+    display: inline-block;
+    color: #5abc9b;
+    font-size: 16px;
+    width: 80%;
+    background-color: #fff;
+    line-height: 38px;
+    height: 38px;
+    border: solid 1px #c9c9c9;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 14px;
+}
+
+.descriion {
+    line-height: 40px;
+    color: #999999;
+    font-size: 12px;
+}
+
+#comment-posMessage .loginbtn {
+    margin-bottom: 9px;
+}

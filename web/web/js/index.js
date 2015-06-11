@@ -88,27 +88,42 @@ var alerModal = new function () {
     }
 };
 var details = new function () {
+    var first = true;
     function request(dom) {
         if (dom === currentMenu) { return; }
-        if (dom) {
+        if (currentMenu) {
             currentMenu.classList.remove("selectd");
+            document.getElementById(currentMenu.getAttribute("data-taget")).style.display = "none";
             currentMenu = dom;
             currentMenu.classList.add("selectd");
+        } else {
+            currentMenu = dom;
         }
 
-        $.ajax({
-            type: 'get',
-            url: "/wap/1",
-            data: {},
-            cache: false,
-            success: function (str) {
-                document.querySelector(".contentDiv").innerHTML = str;
+        var taget = document.getElementById(dom.getAttribute("data-taget"));
+        taget.style.display = "block";
+        if (client.isIos) {
+            window.scrollTo(0, 0);
+        }
+        if (first) {
+            first = false;
+            $.ajax({
+                type: 'get',
+                url: "/wap/1",
+                data: {},
+                cache: false,
+                success: function (str) {
+                    taget.innerHTML = str;
 
-            },
-            error: function () {
+                },
+                error: function () {
 
-            }
-        });
+                }
+            });
+        }
+
+
+
     }
     return {
         request: request
@@ -178,31 +193,47 @@ var questioning = new function () {
 
         document.getElementById("questioning-List").insertAdjacentHTML("afterBegin", str);
     }
-
+    var first = true;
     function request(dom) {
         if (dom === currentMenu) { return; }
-        if (dom) {
+        if (currentMenu) {
             currentMenu.classList.remove("selectd");
+            document.getElementById(currentMenu.getAttribute("data-taget")).style.display = "none";
             currentMenu = dom;
             currentMenu.classList.add("selectd");
             pageIndex = 0;
+        } else {
+            currentMenu = dom;
         }
-        $.ajax({
-            type: 'get',
-            url: "/wap/2",
-            data: {},
-            cache: false,
-            success: function (str) {
-                document.querySelector(".contentDiv").innerHTML = str;
-                pageNext();
-            },
-            error: function () {
+        var taget = document.getElementById(dom.getAttribute("data-taget"));
+        taget.style.display = "block";
+        if (client.isIos) {
+            window.scrollTo(0, 0);
+        }
 
-            }
-        });
+        if (first) {
+            first = false;
+            $.ajax({
+                type: 'get',
+                url: "/wap/2",
+                data: {},
+                cache: false,
+                success: function (str) {
+                    taget.innerHTML = str;
+                    pageSattus = true;
+                    pageNext(taget);
+
+
+                },
+                error: function () {
+
+                }
+            });
+        }
+
     }
     var pageSattus = true;
-    function pageNext() {
+    function pageNext(target) {
         if (pageSattus) {
             pageSattus = false;
             pageIndex++;
@@ -215,6 +246,9 @@ var questioning = new function () {
                     if (str) {
                         document.getElementById("questioning-List").insertAdjacentHTML("beforeend", str);
                         pageSattus = true;
+                        if (target) {
+                            target.querySelector("a.page").style.display = "inline-block";
+                        }
                     }
 
                 },
@@ -238,19 +272,14 @@ var questioning = new function () {
         },
         postQuestion: postQuestion,
         blur: function (dom) {
-            window.scroll(0, 0);
-            if (client.isIos) {
 
-            } else {
-                document.querySelector(".topdiv").style.position = "fixed";
+            if (client.isIos) {
+                window.scroll(0, 0);
             }
 
         },
         foucs: function () {
-            if (client.isIos) {
-            } else {
-                document.querySelector(".topdiv").style.position = "absolute";
-            }
+
         },
         request: request,
         pageNext: pageNext
@@ -277,11 +306,15 @@ var comment = new function () {
                 dataType: 'json',
                 success: function (data) {
                     if (data) {
-                        alert("评论成功！");
-                        var dom = document.getElementById("comment-txt");
-                        dom.value = "";
-                        toHtml(data.comment);
+                        setTimeout(function () {
+                            var dom = document.getElementById("comment-txt");
+                            dom.value = "";
+                            toHtml(data.comment);
+                        }, 0);
 
+                        setTimeout(function () {
+                            alert("评论成功！");
+                        }, 300);
 
                     } else {
                         alert("评论失败");
@@ -302,7 +335,7 @@ var comment = new function () {
     }
 
     function toHtml(data) {
-
+        
         var str = "<div class='item'>\
                 <table>\
                     <tr>\
@@ -324,31 +357,47 @@ var comment = new function () {
 
         document.getElementById("comment-List").insertAdjacentHTML("afterBegin", str);
     }
-
+    var first = true;
     function request(dom) {
         if (dom === currentMenu) { return; }
-        if (dom) {
+        if (currentMenu) {
             currentMenu.classList.remove("selectd");
+            document.getElementById(currentMenu.getAttribute("data-taget")).style.display = "none";
             currentMenu = dom;
             currentMenu.classList.add("selectd");
             pageIndex = 0;
+        } else {
+            currentMenu = dom;
         }
-        $.ajax({
-            type: 'get',
-            url: "/wap/3",
-            data: {},
-            cache: false,
-            success: function (str) {
-                document.querySelector(".contentDiv").innerHTML = str;
-                pageNext();
-            },
-            error: function () {
 
-            }
-        });
+        var taget = document.getElementById(dom.getAttribute("data-taget"));
+        taget.style.display = "block";
+        if (client.isIos) {
+            window.scrollTo(0, 0);
+        }
+        if (first) {
+            first = false;
+            $.ajax({
+                type: 'get',
+                url: "/wap/3",
+                data: {},
+                cache: false,
+                success: function (str) {
+                    taget.innerHTML = str;
+                    pageSattus = true;
+                    pageNext(taget);
+                    window.scrollTo(0, 0);
+
+                },
+                error: function () {
+
+                }
+            });
+        }
+
     }
     var pageSattus = true;
-    function pageNext() {
+    function pageNext(target) {
         if (pageSattus) {
             pageSattus = false;
             pageIndex++;
@@ -360,6 +409,9 @@ var comment = new function () {
                     if (str) {
                         document.getElementById("comment-List").insertAdjacentHTML("beforeend", str);
                         pageSattus = true;
+                        if (target) {
+                            target.querySelector("a.page").style.display = "inline-block";
+                        }
                     }
 
                 },
@@ -399,13 +451,12 @@ var menuPenal = function () {
     var lis = document.querySelectorAll(".menu ul li");
     for (var i = 0; i < lis.length; i++) {
         if (lis[i].classList.contains("selectd")) {
-            currentMenu = lis[i];
             if (i === 0) {
-                details.request();
+                details.request(lis[i]);
             } else if (i === 1) {
-                questioning.request();
+                questioning.request(lis[i]);
             } else if (i === 2) {
-                comment.request();
+                comment.request(lis[i]);
             }
 
             break;
@@ -415,6 +466,10 @@ var menuPenal = function () {
 };
 
 window.addEventListener("load", function () {
+    if (client.isIos) {
 
+    } else {
+        document.querySelector(".topdiv").style.position = "absolute";
+    }
     menuPenal();
 });

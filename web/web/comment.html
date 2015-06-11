@@ -12,14 +12,14 @@
     <link href="css/global.css" rel="stylesheet" />
     <link href="css/index.css" rel="stylesheet" />
 
-    
+
 
     <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
-  
+
     <script src="http://cdn.bootcss.com/jquery-mockjax/1.6.2/jquery.mockjax.js"></script>
     <script src="js/index.js"></script>
     <script src="js/test.js"></script>
- 
+
 
 </head>
 <body>
@@ -28,21 +28,26 @@
             资管咖啡
             <span class="icon-header"></span>
         </header>
-        <div class="vedio">
-
+        <div class="vedio" style="position:relative;">
+            <video style="z-index:1;" width="100%" height="210" controls="controls" post="http://v3.polyv.net/uc/video/getImage?vid=f43e8f09d55a87c1f7abbb4ae0e5d1c4_f" src="http://ws4.videocc.net/hls/f43e8f09d5/4/f43e8f09d55a87c1f7abbb4ae0e5d1c4.m3u8"></video>
         </div>
         <div class="menu">
             <ul>
-                <li ontouchstart="details.request(this)">详&nbsp;&nbsp;情</li>
-                <li ontouchstart="questioning.request(this)">提&nbsp;&nbsp;问</li>
-                <li class="selectd" ontouchstart="comment.request(this)">评&nbsp;&nbsp;论</li>
+                <li ontouchstart="details.request(this)" data-taget="detailContentDiv">详&nbsp;&nbsp;情</li>
+                <li ontouchstart="questioning.request(this)" data-taget="questionContentDiv">提&nbsp;&nbsp;问</li>
+                <li class="selectd" ontouchstart="comment.request(this)" data-taget="commentContentDiv">评&nbsp;&nbsp;论</li>
             </ul>
         </div>
     </div>
-    <div class='contentDiv'>
-     
+    <div class='contentDiv' id="detailContentDiv" style="display:none;">
+
     </div>
-  
+    <div class='contentDiv' id="questionContentDiv" style="display:none">
+
+    </div>
+    <div class='contentDiv' id="commentContentDiv" style="display:none;">
+
+    </div>
     <table class="alert" id="divShare" style="display: none;" onclick="alerModal.shareModal.bgHide()">
         <tr>
             <td>

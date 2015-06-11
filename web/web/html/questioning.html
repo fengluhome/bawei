@@ -51,14 +51,26 @@
         <div class="menu">
             <ul>
                 <li ontouchstart="window.location='details.html'">详&nbsp;&nbsp;情</li>
-                <li class="selectd" ontouchstart="window.location='questioning.html'">提&nbsp;&nbsp;问</li>
+                <li class='selectd' ontouchstart="window.location='questioning.html'">提&nbsp;&nbsp;问</li>
                 <li ontouchstart="window.location='comment.html'">评&nbsp;&nbsp;论</li>
             </ul>
         </div>
     </div>
     <div class="contentDiv">
         <div class='questioning'>
-            <div class='content' style='background:none; margin-bottom: 0px; ' id='questioning-form'>
+            <div class="content" style="background:none; margin-bottom: 0px;" id="questioning-form">
+                <table class="postMesage">
+                    <tbody>
+                        <tr>
+                            <td colspan="2" style="overflow: hidden;  text-align: center;">
+                                <span ontouchstart="window.location=&quot;/wap/school/question/1?weixinlogin=1&amp;r=http://www.zentrust.cn/wap/school/question/1&quot;" class=" loginbtn">我要提问</span>
+                                <div class="descriion">您可以直接向主讲人提问，主讲人回予以回复...</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class='content' style='background:none; margin-bottom: 0px; display:none; ' id='questioning-form'>
                 <table class='postMesage'>
                     <tr>
                         <td style='width: 60px'>
@@ -138,7 +150,7 @@
             </table>
         </div>
     </div>
-   
+
     <script type="text/javascript">
         window.userInfo = {
             uid: "", //用户ID

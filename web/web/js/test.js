@@ -1,13 +1,5 @@
 ﻿
-$.mockjax({
-    url: '/wap/create',
-    responseText: {
-        imgHead: "/images/head.png",
-        name: "张三",
-        time: "2015/5/22 14:20",
-        content: "如何理财？"
-    }
-});
+
 
 $.mockjax({
     url: '/wap/create',
