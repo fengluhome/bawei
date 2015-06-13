@@ -126,8 +126,22 @@ var details = new function () {
 
     }
     return {
-        request: request
-    }
+        request: request,
+        shareShow: function () {
+            if (!client.isIos) {
+                document.querySelector("video").style.display = "none";
+            }
+            alerModal.shareModal.show();
+
+        },
+        shareHide: function () {
+            alerModal.shareModal.bgHide();
+            if (!client.isIos) {
+                document.querySelector("video").style.display = "block";
+            }
+
+        }
+    };
 };
 
 var questioning = new function () {
@@ -335,7 +349,7 @@ var comment = new function () {
     }
 
     function toHtml(data) {
-        
+
         var str = "<div class='item'>\
                 <table>\
                     <tr>\
@@ -444,8 +458,7 @@ var userpage = new function () {
     return {
         selectItem: selectItem
     }
-};
-var currentMenu = null;
+}; var currentMenu = null;
 var menuPenal = function () {
 
     var lis = document.querySelectorAll(".menu ul li");

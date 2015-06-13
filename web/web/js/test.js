@@ -52,7 +52,7 @@ $.mockjax({
             </div>\
         </div>\
         <div class='footer2' style='position:relative;'>\
-            <span class='clicbtn' ontouchstart='alerModal.shareModal.show()'>一键分享</span>\
+            <span class='clicbtn' ontouchstart='details.shareShow()'>一键分享</span>\
         </div>"
 });
 
